@@ -1,14 +1,16 @@
 {
   "version": 2,
-  "functions": {
-    "dist/index.mjs": {
-      "includeFiles": "dist/**"
-    }
-  },
-  "rewrites": [
+  "builds": [
     {
-      "source": "/(.*)",
-      "destination": "/dist/index.mjs"
+      "src": "dist/index.mjs",
+      "use": "@vercel/node@5"
     }
-  ]
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "dist/index.mjs"
+    }
+  ],
+  "buildCommand": "npm run build"
 }
