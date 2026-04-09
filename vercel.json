@@ -2,16 +2,10 @@
   "version": 2,
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "functions": {
-    "dist/index.mjs": {
-      "runtime": "@vercel/node@3",
-      "maxDuration": 60
-    }
-  },
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "/dist/index.mjs"
+      "destination": "/index.mjs"
     }
   ]
 }
